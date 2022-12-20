@@ -24,10 +24,10 @@ id = 'root'
 pw = ****
 dbname = 'creditcard'
 tbname = 'creditcarddb'
-df = pd.read_csv(r'.\data\creditcard.csv')
-uloaddb(df, id, pw, dbname, tbname, host)
+# df = pd.read_csv(r'.\data\creditcard.csv')
+# uloaddb(df, id, pw, dbname, tbname, host)
 # %%
-dloaddb(host, id, pw, dbname, tbname)
+df = dloaddb(host, id, pw, dbname, tbname)
 # %%
 report = create_report(df)
 report.save('creditcard_summary.html')
@@ -275,6 +275,8 @@ def learningCurveDraw(model):
     plt.legend(loc='best')
 
 plt.figure(figsize=(20,20))
-for i, algo in enumerate(models):
+for i, model in enumerate(models):
     plt.subplot(2,2,i+1)
     learningCurveDraw(model)
+
+# %%
